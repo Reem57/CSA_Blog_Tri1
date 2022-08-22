@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "Title",
-            "content": "system.out.println(&quot;hello world&quot;) . | system.out.println(&#34;hello&#34;) package system does not exist .",
+            "content": "System.out.println(&quot;hello world&quot;) . hello world .",
             "url": "https://reem57.github.io/blog_new/2022/08/19/java0.html",
             "relUrl": "/2022/08/19/java0.html",
             "date": " • Aug 19, 2022"
