@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Title",
+            "title": "Python",
             "content": "print(&quot;hello world&quot;) . hello world .",
-            "url": "https://reem57.github.io/blog_new/2022/08/21/.python0.html",
-            "relUrl": "/2022/08/21/.python0.html",
+            "url": "https://reem57.github.io/blog_new/jupyter/2022/08/21/.python0.html",
+            "relUrl": "/jupyter/2022/08/21/.python0.html",
             "date": " • Aug 21, 2022"
         }
         
@@ -14,7 +14,7 @@
     
         ,"post1": {
             "title": "Week 0",
-            "content": "Week 0 . Hack 1 . Insight . image . Java . image . Python . image . Hack 2 . Java project . image .",
+            "content": "Week 0 . Hack 1 . Insight . . Java . . Python . . Hack 2 . Java project . .",
             "url": "https://reem57.github.io/blog_new/markdown/2022/08/19/week0.html",
             "relUrl": "/markdown/2022/08/19/week0.html",
             "date": " • Aug 19, 2022"
@@ -24,10 +24,10 @@
   
     
         ,"post2": {
-            "title": "Title",
+            "title": "Java",
             "content": "System.out.println(&quot;hello world&quot;) . hello world .",
-            "url": "https://reem57.github.io/blog_new/2022/08/19/java0.html",
-            "relUrl": "/2022/08/19/java0.html",
+            "url": "https://reem57.github.io/blog_new/jupyter/2022/08/19/java0.html",
+            "relUrl": "/jupyter/2022/08/19/java0.html",
             "date": " • Aug 19, 2022"
         }
         
