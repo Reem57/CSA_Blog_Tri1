@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      4 min read
     
 </span></p>
 
@@ -335,10 +335,12 @@ Enter a String: false
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Integer - a number value non negative and not a decimal
-Double - A number value with a decimal
-Boolean - True or False values that are usually used in if statements
-string - Any character that the computer can print</p>
+<ul>
+<li>Integer - a number value non negative and not a decimal</li>
+<li>Double - A number value with a decimal</li>
+<li>Boolean - True or False values that are usually used in if statements</li>
+<li>string - Any character that the computer can print</li>
+</ul>
 
 </div>
 </div>
@@ -350,23 +352,24 @@ string - Any character that the computer can print</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GradeCalculator</span> <span class="p">{</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GPACalculator</span><span class="p">{</span>
     <span class="c1">// introduction to Double wrapper class (object)</span>
     <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">grades</span><span class="p">;</span>   <span class="c1">// similar to Python list</span>
 
     <span class="c1">// constructor, initializes ArrayList and call enterGrades method</span>
-    <span class="kd">public</span> <span class="nf">GradeCalculator</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">GPACalculator</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="na">grades</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
         <span class="k">this</span><span class="p">.</span><span class="na">enterGrades</span><span class="p">();</span>
     <span class="p">}</span>
 
 
     <span class="c1">// enterGrades input method using scanner</span>
-    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">enterGrades</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">average</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="nf">enterGrades</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">Scanner</span> <span class="n">input</span><span class="p">;</span>
 
         <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"How many classes have you taken: "</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"How many classes have you taken: \n"</span><span class="p">);</span>
         <span class="k">try</span> <span class="p">{</span>
             <span class="kt">double</span> <span class="n">classNum</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
             <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">classNum</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -374,117 +377,37 @@ string - Any character that the computer can print</p>
                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Enter your credits for each class (1-5): "</span><span class="p">);</span>
                 <span class="k">try</span> <span class="p">{</span>
                     <span class="kt">double</span> <span class="n">sampleInputDouble</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
-                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sampleInputDouble</span><span class="p">);</span>   
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sampleInputDouble</span><span class="p">);</span> 
+                    <span class="k">this</span><span class="p">.</span><span class="na">grades</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">sampleInputDouble</span><span class="p">);</span>
                 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// if not a number</span>
                     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Not an double (form like 9.99), "</span> <span class="o">+</span> <span class="n">e</span><span class="p">);</span>
                 <span class="p">}</span>
                 <span class="n">input</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
             <span class="p">}</span>
+            <span class="kt">double</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>   <span class="c1">// running total</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">double</span> <span class="n">num</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="na">grades</span><span class="p">)</span> <span class="p">{</span>    <span class="c1">// enhanced for loop</span>
+                <span class="n">total</span> <span class="o">+=</span> <span class="n">num</span><span class="p">;</span>   <span class="c1">// shortcut add and assign operator</span>
+        <span class="p">}</span>
+            <span class="n">average</span> <span class="o">=</span> <span class="n">total</span><span class="o">/</span> <span class="n">classNum</span><span class="p">;</span>
         <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// if not an integer</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"This is not an integer"</span><span class="p">);</span>
         <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">average</span><span class="p">;</span>  <span class="c1">// double math, ArrayList grades object maintains its size</span>
 
     <span class="p">}</span>
 
     <span class="c1">// average calculation </span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">average</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>   <span class="c1">// running total</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="na">grades</span><span class="p">)</span> <span class="p">{</span>    <span class="c1">// enhanced for loop</span>
-            <span class="n">total</span> <span class="o">+=</span> <span class="n">num</span><span class="p">;</span>   <span class="c1">// shortcut add and assign operator</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">total</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="na">grades</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>  <span class="c1">// double math, ArrayList grades object maintains its size</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">average</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">average</span><span class="p">);</span>  <span class="c1">// double math, ArrayList grades object maintains its size</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">GPACalculator</span> <span class="n">grades</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GPACalculator</span><span class="p">();</span> <span class="c1">// calls constructor, creates object, which calls enterGrades</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Average: "</span> <span class="o">+</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">"%.2f"</span><span class="p">,</span> <span class="n">grades</span><span class="p">.</span><span class="na">average</span><span class="p">()));</span>  <span class="c1">// format used to standardize to two decimal points</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="c1">// IJava activation</span>
-<span class="n">GradeCalculator</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        for (int num : </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">this.grades</span><span class="ansi-black-intense-fg ansi-bold">) {    // enhanced for loop</span>
-<span class="ansi-red-intense-fg ansi-bold">incompatible types: java.lang.Double cannot be converted to int</span>
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GPACalculator</span> <span class="p">{</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>  
-        
-        <span class="n">Scanner</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>   
-        
-        <span class="n">String</span> <span class="n">letterGrades</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
-        <span class="kt">double</span> <span class="n">credit</span><span class="p">;</span>
-        <span class="kt">double</span> <span class="n">GPA</span> <span class="o">=</span> <span class="mf">0.00</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="kt">double</span> <span class="n">classNum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"How many classes are you taking: \n"</span><span class="p">);</span>
-        
-        <span class="n">classNum</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-     
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">classNum</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        
-            <span class="n">Scanner</span> <span class="n">input2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"What is your Grade in Period "</span> <span class="o">+</span> <span class="n">num</span> <span class="o">+</span> <span class="s">"? ---&gt; "</span><span class="p">);</span>
-            <span class="n">letterGrades</span> <span class="o">=</span> <span class="n">input2</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">letterGrades</span> <span class="o">+</span> <span class="s">"\n"</span><span class="p">);</span>
-            
-    
-            <span class="k">if</span> <span class="p">(</span><span class="n">letterGrades</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"A"</span><span class="p">)){</span>
-            <span class="n">credit</span> <span class="o">=</span> <span class="mf">4.00</span><span class="p">;</span> 
-            <span class="n">GPA</span> <span class="o">+=</span> <span class="n">credit</span><span class="p">;</span>
-    
-        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">letterGrades</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"B"</span><span class="p">)){</span>
-            <span class="n">credit</span> <span class="o">=</span> <span class="mf">3.00</span><span class="p">;</span>
-            <span class="n">GPA</span> <span class="o">+=</span> <span class="n">credit</span><span class="p">;</span>
-    
-        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">letterGrades</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"C"</span><span class="p">)){</span>
-            <span class="n">credit</span> <span class="o">=</span> <span class="mf">2.00</span><span class="p">;</span>
-            <span class="n">GPA</span> <span class="o">+=</span> <span class="n">credit</span><span class="p">;</span>
-    
-        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">letterGrades</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"D"</span><span class="p">)){</span>
-            <span class="n">credit</span> <span class="o">=</span> <span class="mf">1.00</span><span class="p">;</span>
-            <span class="n">GPA</span> <span class="o">+=</span> <span class="n">credit</span><span class="p">;</span>
-    
-        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">letterGrades</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"F"</span><span class="p">)){</span>
-            <span class="n">credit</span> <span class="o">=</span> <span class="mf">0.00</span><span class="p">;</span>
-            <span class="n">GPA</span> <span class="o">+=</span> <span class="n">credit</span><span class="p">;</span>
-    
-        <span class="p">}</span>
-
-        <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    
-        <span class="p">}</span>
-    
-        <span class="kt">double</span> <span class="n">GPA</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">/</span> <span class="n">classes</span><span class="p">;</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Your Un-weighted GPA is:"</span> <span class="o">+</span> <span class="n">GPA</span><span class="p">);</span>
-    <span class="p">}</span>
-
-<span class="p">}</span>
-
 <span class="n">GPACalculator</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
@@ -497,19 +420,9 @@ string - Any character that the computer can print</p>
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">double GPA = sum / classes;</span>
-<span class="ansi-red-intense-fg ansi-bold">variable GPA is already defined in method main(java.lang.String[])</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        double GPA = </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">sum</span><span class="ansi-black-intense-fg ansi-bold"> / classes;</span>
-<span class="ansi-red-intense-fg ansi-bold">cannot find symbol</span>
-<span class="ansi-red-intense-fg ansi-bold">  symbol:   variable sum</span>
-
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        double GPA = sum / </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">classes</span><span class="ansi-black-intense-fg ansi-bold">;</span>
-<span class="ansi-red-intense-fg ansi-bold">cannot find symbol</span>
-<span class="ansi-red-intense-fg ansi-bold">  symbol:   variable classes</span>
-</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>How many classes have you taken: 
+Enter your credits for each class (1-5): </pre>
 </div>
 </div>
 
