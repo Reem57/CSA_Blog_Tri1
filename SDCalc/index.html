@@ -129,9 +129,9 @@ window.onload = wrap_img;
     //Standard deviation Calculator
     function SDCalc(){
         for (let i = 0; i < array.length; i++){
-            v += Math.pow(array[i]-(total / array.length).toFixed(2), 2)
+            v += Math.pow(array[i]-(total / array.length), 2)
         }
-        v = Math.sqrt(v/(array.length - 1))
+        v = Math.sqrt(v/array.length)
         return v
     }
 
