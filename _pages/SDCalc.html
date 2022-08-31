@@ -62,6 +62,14 @@ title: Standard Deviation Calculator
         scoresContainer.appendChild(input);
         scoresContainer.appendChild(br);
     }
+    //Standard deviation Calculator
+    function SDCalc(){
+        for (let i = 0; i < array.length; i++){
+            v += Math.pow(array[i]-(total / array.length).toFixed(2), 2)
+        }
+        v = Math.sqrt(v/(array.length - 1))
+        return v
+    }
 
     // Calculates totals
     function calculator(){
@@ -77,7 +85,7 @@ title: Standard Deviation Calculator
             document.getElementById('total').innerHTML = total.toFixed(2);
             document.getElementById('count').innerHTML = array.length;
             document.getElementById('average').innerHTML = (total / array.length).toFixed(2);
-            document.getElementById('SD').innerHTML = (total / array.length).toFixed(2);
+            document.getElementById('SD').innerHTML = SDCalc().toFixed(2);
             // make a new input line
             newInputLine(array.length);
             
