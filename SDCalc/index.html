@@ -4,20 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Review Ticket | CSA Tri 1 Blog</title>
+<title>Standard Deviation Calculator | CSA Tri 1 Blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Review Ticket" />
+<meta property="og:title" content="Standard Deviation Calculator" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="CSA 22-23" />
 <meta property="og:description" content="CSA 22-23" />
-<link rel="canonical" href="https://reem57.github.io/blog_new/reviewTicket/" />
-<meta property="og:url" content="https://reem57.github.io/blog_new/reviewTicket/" />
+<link rel="canonical" href="https://reem57.github.io/blog_new/SDCalc/" />
+<meta property="og:url" content="https://reem57.github.io/blog_new/SDCalc/" />
 <meta property="og:site_name" content="CSA Tri 1 Blog" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Review Ticket" />
+<meta property="twitter:title" content="Standard Deviation Calculator" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"CSA 22-23","headline":"Review Ticket","url":"https://reem57.github.io/blog_new/reviewTicket/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"CSA 22-23","headline":"Standard Deviation Calculator","url":"https://reem57.github.io/blog_new/SDCalc/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog_new/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://reem57.github.io/blog_new/feed.xml" title="CSA Tri 1 Blog" /><link rel="shortcut icon" type="image/x-icon" href="/blog_new/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -64,32 +64,92 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/blog_new/about/">About Me</a><a class="page-link" href="/blog_new/reviewTicket/">Review Ticket</a><a class="page-link" href="/blog_new/search/">Search</a><a class="page-link" href="/blog_new/categories/">Tags</a></div>
+        <div class="trigger"><a class="page-link" href="/blog_new/SDCalc/">Standard Deviation Calculator</a><a class="page-link" href="/blog_new/about/">About Me</a><a class="page-link" href="/blog_new/search/">Search</a><a class="page-link" href="/blog_new/categories/">Tags</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><h1 class="page-heading">Review Ticket</h1><h1 id="posts">Posts</h1>
+        <!-- <script>
+    const values = []
+    values.push(document.getElementById("value").innerHTML);
+</script>
+<body>
+    <div>
+        <form>
+            <input type="submit" id="value" value="Enter your values">
+            <label for="value">HTML</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">CSS</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">JavaScript</label>
+        </form> 
+    </div>
+</body> -->
 
+<div class="container bg-primary">
+    <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+        <span class="fs-4">Standard Deviation Calculator</span>
+    </header>
+    <form>
+        <!-- Totals -->
+        <div class="form-group row">
+            Total : <span id="total" class="label label-primary">0.0</span>
+            Count : <span id="count" class="label label-primary">0.0</span>
+            Average : <span id="average" class="label label-primary">0.0</span>
+        </div>
+        <!-- Rows -->
+        <div class="form-group row">
+            Input scores, press tab to add new number:
+            <div id="scores">
+                <input onblur="calculator()" type="text" name="score" id="score0"/><br>
+                <!-- javascript generated inputs -->
+            </div>
+        </div>
+    </form>
+</div>
 
+<script>
+    const scoresContainer = document.getElementById("scores");
 
-  
+    // Creates new input line
+    function newInputLine(index) {
+        // Prepare new input line
+        var input = document.createElement("input");  // input element
+        var br = document.createElement("br");  // line break element
+        // Setup input line attributes
+        input.setAttribute('onblur', "calculator()");
+        input.setAttribute('type', "text");
+        input.setAttribute('name', "score");
+        input.setAttribute('id', "score" + index);
+        // Add input and line break to page
+        scoresContainer.appendChild(input);
+        scoresContainer.appendChild(br);
+    }
 
-  <!-- Hide posts if front matter flag hide:true -->
-  
-  
+    // Calculates totals
+    function calculator(){
+        var array = document.getElementsByName('score'); // setup array of scores
+        if (array[array.length-1].value.length != 0) {   // input cell has a value
+            // algorithm to calculate results
+            var total = 0;  // running total
+            for(var i = 0; i < array.length; i++){  // iterate through array
+                if(parseFloat(array[i].value))  // convert to float
+                    total += parseFloat(array[i].value);  // add to running total
+            }
+            // update totals
+            document.getElementById('total').innerHTML = total.toFixed(2);
+            document.getElementById('count').innerHTML = array.length;
+            document.getElementById('average').innerHTML = (total / array.length).toFixed(2);
+            // make a new input line
+            newInputLine(array.length);
+            
+        }
+        // Set cursor focus on last element; this could be new or unchanged element
+        document.getElementById("score" + (array.length-1)).focus();
+    }
 
-  <!-- Sort posts by rank, then date -->
-  
-  
-  
+</script>
 
- 
-  
-
-   <!-- Assemble final sorted posts array -->
-  
-  </div>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/blog_new/"></data>
