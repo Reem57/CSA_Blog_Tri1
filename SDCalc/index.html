@@ -96,6 +96,7 @@ window.onload = wrap_img;
             Total : <span id="total" class="label label-primary">0.0</span>
             Count : <span id="count" class="label label-primary">0.0</span>
             Average : <span id="average" class="label label-primary">0.0</span>
+            SD : <span id="SD" class="label label-primary">0.0</span>
         </div>
         <!-- Rows -->
         <div class="form-group row">
@@ -140,6 +141,7 @@ window.onload = wrap_img;
             document.getElementById('total').innerHTML = total.toFixed(2);
             document.getElementById('count').innerHTML = array.length;
             document.getElementById('average').innerHTML = (total / array.length).toFixed(2);
+            document.getElementById('SD').innerHTML = (total / array.length).toFixed(2);
             // make a new input line
             newInputLine(array.length);
             
