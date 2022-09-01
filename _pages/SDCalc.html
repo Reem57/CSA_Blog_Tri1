@@ -5,46 +5,6 @@ permalink: /SDCalc/
 title: Standard Deviation Calculator
 ---
 
-<!-- <script>
-    const values = []
-    values.push(document.getElementById("value").innerHTML);
-</script>
-<body>
-    <div>
-        <form>
-            <input type="submit" id="value" value="Enter your values">
-            <label for="value">HTML</label><br>
-            <input type="radio" id="css" name="fav_language" value="CSS">
-            <label for="css">CSS</label><br>
-            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-            <label for="javascript">JavaScript</label>
-        </form> 
-    </div>
-</body> -->
-
-<div class="container bg-primary">
-    <header class="pb-3 mb-4 border-bottom border-primary text-dark">
-        <span class="fs-4">Standard Deviation Calculator</span>
-    </header>
-    <form>
-        <!-- Totals -->
-        <div class="form-group row">
-            Total : <span id="total" class="label label-primary">0.0</span>
-            Count : <span id="count" class="label label-primary">0.0</span>
-            Average : <span id="average" class="label label-primary">0.0</span>
-            SD : <span id="SD" class="label label-primary">0.0</span>
-        </div>
-        <!-- Rows -->
-        <div class="form-group row">
-            Input scores, press tab to add new number:
-            <div id="scores">
-                <input onblur="calculator()" type="text" name="score" id="score0"/><br>
-                <!-- javascript generated inputs -->
-            </div>
-        </div>
-    </form>
-</div>
-
 <script>
     const scoresContainer = document.getElementById("scores");
 
@@ -62,17 +22,10 @@ title: Standard Deviation Calculator
         scoresContainer.appendChild(input);
         scoresContainer.appendChild(br);
     }
-    //Standard deviation Calculator
-    function SDCalc(){
-        for (let i = 0; i < array.length; i++){
-            v += Math.pow(array[i]-(total / array.length), 2)
-        }
-        v = Math.sqrt(v/array.length)
-        return v
-    }
+
 
     // Calculates totals
-    function calculator(){
+    function calculator(){    
         var array = document.getElementsByName('score'); // setup array of scores
         if (array[array.length-1].value.length != 0) {   // input cell has a value
             // algorithm to calculate results
@@ -81,17 +34,51 @@ title: Standard Deviation Calculator
                 if(parseFloat(array[i].value))  // convert to float
                     total += parseFloat(array[i].value);  // add to running total
             }
+            
+            let r = 0;
+            r = Math.min.apply(Math, array);
+            
+            // sd calculator
+            let sum = 0;
+            let sd = 0;
+            for (let i = 0; i < array.length; i++){
+                sum += Math.pow(array[i].value - (total / array.length),2);
+                }
+                sd = Math.sqrt(sum/(array.length-1));
+            
             // update totals
             document.getElementById('total').innerHTML = total.toFixed(2);
             document.getElementById('count').innerHTML = array.length;
             document.getElementById('average').innerHTML = (total / array.length).toFixed(2);
-            document.getElementById('SD').innerHTML = SDCalc().toFixed(2);
+            document.getElementById('SD').innerHTML = sd.toFixed(3);
             // make a new input line
             newInputLine(array.length);
             
         }
-        // Set cursor focus on last element; this could be new or unchanged element
-        document.getElementById("score" + (array.length-1)).focus();
-    }
-
+    // Set cursor focus on last element; this could be new or unchanged element
+    document.getElementById("score" + (array.length-1)).focus();
+}
 </script>
+
+<div class="container bg-primary">
+    <header class="pb-3 mb-4 border-bottom border-primary text-dark">
+        <span class="fs-4">Standard Deviation Calculator</span>
+    </header>
+    <form>
+        <!-- Totals -->
+        <div class="form-group row">
+            Total : <span id="total" class="label label-primary">0.0</span>
+            Count : <span id="count" class="label label-primary">0.0</span>
+            Average : <span id="average" class="label label-primary">0.0</span>
+            SD : <span id="SD" class="label label-primary">0.00</span>
+        </div>
+        <!-- Rows -->
+        <div class="form-group row">
+            Input scores, press tab to add new number:
+            <div id="scores">
+                <input onblur="calculator()" type="text" name="score" id="score0"/><br>
+                <!-- javascript generated inputs -->
+            </div>
+        </div>
+    </form>
+</div>
