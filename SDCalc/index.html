@@ -79,6 +79,7 @@ window.onload = wrap_img;
             Total : <span id="total" class="label label-primary">0.0</span>
             Count : <span id="count" class="label label-primary">0.0</span>
             Average : <span id="average" class="label label-primary">0.0</span>
+            sd : <span id="SD" class="label label-primary">0.00</span>
         </div>
         <!-- Rows -->
         <div class="form-group row">
@@ -119,10 +120,20 @@ window.onload = wrap_img;
                 if(parseFloat(array[i].value))  // convert to float
                     total += parseFloat(array[i].value);  // add to running total
             }
+
+            // sd calculator
+            let sum = 0;
+            let sd = 0;
+            for (let i = 0; i < array.length; i++){
+                sum += Math.pow(array[i].value - (total / array.length),2);
+            }
+       		sd = Math.sqrt(sum/(array.length-1));
+
             // update totals
             document.getElementById('total').innerHTML = total.toFixed(2);
             document.getElementById('count').innerHTML = array.length;
             document.getElementById('average').innerHTML = (total / array.length).toFixed(2);
+            document.getElementById('SD').innerHTML = sd.toFixed(3);
             // make a new input line
             newInputLine(array.length);
             
