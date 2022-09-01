@@ -7,7 +7,7 @@ title: Standard Deviation Calculator
 
 <div class="container bg-primary">
     <header class="pb-3 mb-4 border-bottom border-primary text-dark">
-        <span class="fs-4">Grade Calculator</span>
+        <span class="fs-4">Stats Calculator</span>
     </header>
     <form>
         <!-- Totals -->
@@ -16,6 +16,8 @@ title: Standard Deviation Calculator
             Count : <span id="count" class="label label-primary">0.0</span>
             Average : <span id="average" class="label label-primary">0.0</span>
             sd : <span id="SD" class="label label-primary">0.00</span>
+            Max : <span id="Max" class="label label-primary">0.00</span>
+            Min : <span id="Min" class="label label-primary">0.00</span>
         </div>
         <!-- Rows -->
         <div class="form-group row">
@@ -52,7 +54,9 @@ title: Standard Deviation Calculator
         if (array[array.length-1].value.length != 0) {   // input cell has a value
             // algorithm to calculate results
             var total = 0;  // running total
+            var arrayNum = []; //creating a new array
             for(var i = 0; i < array.length; i++){  // iterate through array
+                arrayNum.push(parseFloat(array[i].value)) //making the strings in the original array integers in the new one
                 if(parseFloat(array[i].value))  // convert to float
                     total += parseFloat(array[i].value);  // add to running total
             }
@@ -70,6 +74,8 @@ title: Standard Deviation Calculator
             document.getElementById('count').innerHTML = array.length;
             document.getElementById('average').innerHTML = (total / array.length).toFixed(2);
             document.getElementById('SD').innerHTML = sd.toFixed(3);
+            document.getElementById('Max').innerHTML = Math.max(...arrayNum).toFixed(2);
+            document.getElementById('Min').innerHTML = Math.min(...arrayNum).toFixed(2);
             // make a new input line
             newInputLine(array.length);
             
