@@ -82,6 +82,7 @@ window.onload = wrap_img;
             sd : <span id="SD" class="label label-primary">0.00</span>
             Max : <span id="Max" class="label label-primary">0.00</span>
             Min : <span id="Min" class="label label-primary">0.00</span>
+            Med : <span id="med" class="label label-primary">0.00</span>
         </div>
         <!-- Rows -->
         <div class="form-group row">
@@ -133,6 +134,13 @@ window.onload = wrap_img;
             }
        		sd = Math.sqrt(sum/(array.length-1));
 
+            //median calculator
+            const median = arr => {
+  						const mid = Math.floor(arr.length / 2),
+    					nums = [...arr].sort((a, b) => a - b);
+  						return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+            };
+
             // update totals
             document.getElementById('total').innerHTML = total.toFixed(2);
             document.getElementById('count').innerHTML = array.length;
@@ -140,6 +148,7 @@ window.onload = wrap_img;
             document.getElementById('SD').innerHTML = sd.toFixed(3);
             document.getElementById('Max').innerHTML = Math.max(...arrayNum).toFixed(2);
             document.getElementById('Min').innerHTML = Math.min(...arrayNum).toFixed(2);
+            document.getElementById('med').innerHTML = median(arrayNum).toFixed(2);
             // make a new input line
             newInputLine(array.length);
             
