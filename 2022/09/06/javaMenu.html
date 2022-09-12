@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -125,154 +125,157 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>import java.util.Scanner; //library for user input
+import java.lang.Math; //library for random numbers
+public class Menu {
+    // Instance Variables
+    public final String DEFAULT = "\u001B[0m";  // Default Terminal Color
+    public final String[][] COLORS = { // 2D Array of ANSI Terminal Colors
+        {"Default",DEFAULT},
+        {"Red", "\u001B[31m"},
+        {"Green", "\u001B[32m"},
+        {"Yellow", "\u001B[33m"},
+        {"Blue", "\u001B[34m"},
+        {"Purple", "\u001B[35m"},
+        {"Cyan", "\u001B[36m"},
+        {"White", "\u001B[37m"},
+    };
+    // 2D column location for data
+    public final int NAME = 0;
+    public final int ANSI = 1;  // ANSI is the "standard" for terminal codes
+    // Constructor on this Object takes control of menu events and actions
+    public Menu() {
+        Scanner sc = new Scanner(System.in);  // using Java Scanner Object
+        this.print();  // print Menu
+        boolean quit = false;
+        while (!quit) {
+            try {  // scan for Input
+                int choice = sc.nextInt();  // using method from Java Scanner Object
+                System.out.print("" + choice + ": ");
+                quit = this.action(choice);  // take action
+            } catch (Exception e) {
+                sc.nextLine(); // error: clear buffer
+                System.out.println(e + ": Not a number, try again.");
+            }
+        }
+        sc.close();
+    }
+    // Print the menu options to Terminal
+    private void print() {
+        //System.out.println commands below is used to present a Menu to the user.
+        System.out.println("<strong><strong><strong><strong><strong><strong>__</strong></strong></strong></strong></strong></strong>\n");
+        System.out.println("Choose from these choices:");
+        System.out.println("<strong><strong><strong><strong><strong><strong>__</strong></strong></strong></strong></strong></strong>\n");
+        System.out.println("1 - Say Hello");
+        System.out.println("2 - Output colors");
+        System.out.println("3 - Loading in color");
+        System.out.println("4 - Factorial Calculator");
+        System.out.println("5 - Degrees to Radians");
+        System.out.println("6 - Grade Calculator");
+        System.out.println("0 - Quit");
+        System.out.println("<strong><strong><strong><strong><strong><strong>__</strong></strong></strong></strong></strong></strong>\n");
+    }
+    // Private method to perform action and return true if action is to quit/exit
+    private boolean action(int selection) {
+        boolean quit = false;
+        switch (selection) {  // Switch or Switch/Case is Control Flow statement and is used to evaluate the user selection
+            case 0:
+                System.out.print("Goodbye, World!");
+                quit = true;
+                break;
+            case 1:
+                System.out.print("Hello, World!");
+                break;
+            case 2:
+                for(int i = 0; i &lt; COLORS.length; i++)  // loop through COLORS array
+                    System.out.print(COLORS[i][ANSI] + COLORS[i][NAME]);
+                break;
+            case 3:
+                System.out.print("Loading...");
+                for (int i = 0; i &lt; 10; i++) {  // fixed length loading bar
+                    int random = (int) (Math.random() <em> COLORS.length);  // random logic
+                    try {
+                        Thread.sleep(100);  // delay for loading
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                    System.out.print(COLORS[random][ANSI] + "Hey! ");
+                }
+                break;
+            case 4:
+                System.out.print("Enter an Integer:");
+                Scanner myObj = new Scanner(System.in);
+                int number = myObj.nextInt();
+                int i,fact=1;
+                for(i=1;i&lt;=number;i++){
+                    fact=fact</em>i;
+                }
+                System.out.println("\nFactorial of "+number+" is: "+fact);
+                break;
+            case 5:
+                System.out.print("Enter a Degree Value:");
+                Scanner myObj2 = new Scanner(System.in);
+                double number2 = myObj2.nextDouble();
+                double radians = Math.toRadians(number2);
+                System.out.println("\nValue in Radians = " + String.format("%.2f", radians));
+                break;
+            case 6:
+                /* This program assumes that the student has 6 subjects,</p>
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span> <span class="c1">//library for user input</span>
-<span class="kn">import</span> <span class="nn">java.lang.Math</span><span class="p">;</span> <span class="c1">//library for random numbers</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Menu</span> <span class="p">{</span>
-    <span class="c1">// Instance Variables</span>
-    <span class="kd">public</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">DEFAULT</span> <span class="o">=</span> <span class="s">&quot;\u001B[0m&quot;</span><span class="p">;</span>  <span class="c1">// Default Terminal Color</span>
-    <span class="kd">public</span> <span class="kd">final</span> <span class="n">String</span><span class="o">[][]</span> <span class="n">COLORS</span> <span class="o">=</span> <span class="p">{</span> <span class="c1">// 2D Array of ANSI Terminal Colors</span>
-        <span class="p">{</span><span class="s">&quot;Default&quot;</span><span class="p">,</span><span class="n">DEFAULT</span><span class="p">},</span>
-        <span class="p">{</span><span class="s">&quot;Red&quot;</span><span class="p">,</span> <span class="s">&quot;\u001B[31m&quot;</span><span class="p">},</span>
-        <span class="p">{</span><span class="s">&quot;Green&quot;</span><span class="p">,</span> <span class="s">&quot;\u001B[32m&quot;</span><span class="p">},</span>
-        <span class="p">{</span><span class="s">&quot;Yellow&quot;</span><span class="p">,</span> <span class="s">&quot;\u001B[33m&quot;</span><span class="p">},</span>
-        <span class="p">{</span><span class="s">&quot;Blue&quot;</span><span class="p">,</span> <span class="s">&quot;\u001B[34m&quot;</span><span class="p">},</span>
-        <span class="p">{</span><span class="s">&quot;Purple&quot;</span><span class="p">,</span> <span class="s">&quot;\u001B[35m&quot;</span><span class="p">},</span>
-        <span class="p">{</span><span class="s">&quot;Cyan&quot;</span><span class="p">,</span> <span class="s">&quot;\u001B[36m&quot;</span><span class="p">},</span>
-        <span class="p">{</span><span class="s">&quot;White&quot;</span><span class="p">,</span> <span class="s">&quot;\u001B[37m&quot;</span><span class="p">},</span>
-    <span class="p">};</span>
-    <span class="c1">// 2D column location for data</span>
-    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">NAME</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">ANSI</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">// ANSI is the &quot;standard&quot; for terminal codes</span>
-    <span class="c1">// Constructor on this Object takes control of menu events and actions</span>
-    <span class="kd">public</span> <span class="nf">Menu</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>  <span class="c1">// using Java Scanner Object</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>  <span class="c1">// print Menu</span>
-        <span class="kt">boolean</span> <span class="n">quit</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">quit</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">try</span> <span class="p">{</span>  <span class="c1">// scan for Input</span>
-                <span class="kt">int</span> <span class="n">choice</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>  <span class="c1">// using method from Java Scanner Object</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">choice</span> <span class="o">+</span> <span class="s">&quot;: &quot;</span><span class="p">);</span>
-                <span class="n">quit</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">action</span><span class="p">(</span><span class="n">choice</span><span class="p">);</span>  <span class="c1">// take action</span>
-            <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span> <span class="c1">// error: clear buffer</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span> <span class="o">+</span> <span class="s">&quot;: Not a number, try again.&quot;</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="n">sc</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
-    <span class="p">}</span>
-    <span class="c1">// Print the menu options to Terminal</span>
-    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
-        <span class="c1">//System.out.println commands below is used to present a Menu to the user.</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;__________________________\n&quot;</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Choose from these choices:&quot;</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;__________________________\n&quot;</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;1 - Say Hello&quot;</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;2 - Output colors&quot;</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;3 - Loading in color&quot;</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;4 - Factorial Calculator&quot;</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;5 - Degrees to Radians&quot;</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;0 - Quit&quot;</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;__________________________\n&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="c1">// Private method to perform action and return true if action is to quit/exit</span>
-    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">action</span><span class="p">(</span><span class="kt">int</span> <span class="n">selection</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">boolean</span> <span class="n">quit</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-        <span class="k">switch</span> <span class="p">(</span><span class="n">selection</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// Switch or Switch/Case is Control Flow statement and is used to evaluate the user selection</span>
-            <span class="k">case</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Goodbye, World!&quot;</span><span class="p">);</span>
-                <span class="n">quit</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Hello, World!&quot;</span><span class="p">);</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
-                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">COLORS</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>  <span class="c1">// loop through COLORS array</span>
-                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">COLORS</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">ANSI</span><span class="o">]</span> <span class="o">+</span> <span class="n">COLORS</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">NAME</span><span class="o">]</span><span class="p">);</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Loading...&quot;</span><span class="p">);</span>
-                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// fixed length loading bar</span>
-                    <span class="kt">int</span> <span class="n">random</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="n">COLORS</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>  <span class="c1">// random logic</span>
-                    <span class="k">try</span> <span class="p">{</span>
-                        <span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>  <span class="c1">// delay for loading</span>
-                    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-                        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
-                    <span class="p">}</span>
-                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">COLORS</span><span class="o">[</span><span class="n">random</span><span class="o">][</span><span class="n">ANSI</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;Hey! &quot;</span><span class="p">);</span>
-                <span class="p">}</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter an Integer:&quot;</span><span class="p">);</span>
-                <span class="n">Scanner</span> <span class="n">myObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-                <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="n">myObj</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-                <span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="n">fact</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-                <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">number</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
-                    <span class="n">fact</span><span class="o">=</span><span class="n">fact</span><span class="o">*</span><span class="n">i</span><span class="p">;</span>
-                <span class="p">}</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nFactorial of &quot;</span><span class="o">+</span><span class="n">number</span><span class="o">+</span><span class="s">&quot; is: &quot;</span><span class="o">+</span><span class="n">fact</span><span class="p">);</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="mi">5</span><span class="p">:</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Enter a Degree Value:&quot;</span><span class="p">);</span>
-                <span class="n">Scanner</span> <span class="n">myObj2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
-                <span class="kt">double</span> <span class="n">number2</span> <span class="o">=</span> <span class="n">myObj2</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
-                <span class="kt">double</span> <span class="n">radians</span> <span class="o">=</span> <span class="n">Math</span><span class="p">.</span><span class="na">toRadians</span><span class="p">(</span><span class="n">number2</span><span class="p">);</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nValue in Radians = &quot;</span> <span class="o">+</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%.2f&quot;</span><span class="p">,</span> <span class="n">radians</span><span class="p">));</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="k">default</span><span class="p">:</span>
-                <span class="c1">//Prints error message from console</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Unexpected choice, try again.&quot;</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">DEFAULT</span><span class="p">);</span>  <span class="c1">// make sure to reset color and provide new line</span>
-        <span class="k">return</span> <span class="n">quit</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="c1">// Static driver/tester method</span>
-    <span class="kd">static</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>  <span class="p">{</span>
-        <span class="k">new</span> <span class="n">Menu</span><span class="p">();</span> <span class="c1">// starting Menu object</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="n">Menu</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-</pre></div>
+<pre><code>            * thats why I have created the array of size 6. You can
+            * change this as per the requirement.
+            */
+            int marks[] = new int[5];
+            float total=0, avg;
+            Scanner scanner = new Scanner(System.in);
 
-    </div>
+            for(i=0; i&lt;5; i++) { 
+                System.out.print("Enter Grade for Period "+(i+1)+": ");
+                int test = scanner.nextInt();
+                marks[i] = test;
+
+                System.out.println(test);
+                System.out.println(marks[i]);
+                total = total + marks[i];
+            }
+            scanner.close();
+            //Calculating average here
+            avg = total/5;
+            System.out.println("The student Grade is: ");
+            if(avg&gt;=80) {
+               System.out.println("A " + avg);
+            }
+            else if(avg&gt;=60 &amp;&amp; avg&lt;80){
+                System.out.println("B " + avg);
+            } 
+            else if(avg&gt;=40 &amp;&amp; avg&lt;60){
+                System.out.println("C " + avg);
+            }
+            else{
+                System.out.println("D " + avg);
+            }
+
+            break;
+        default:
+            //Prints error message from console
+            System.out.print("Unexpected choice, try again.");
+    }
+    System.out.println(DEFAULT);  // make sure to reset color and provide new line
+    return quit;
+}
+// Static driver/tester method
+static public void main(String[] args)  {
+    new Menu(); // starting Menu object
+}
+</code></pre>
+<p>}
+Menu.main(null);</p>
+
 </div>
 </div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>__________________________
-
-Choose from these choices:
-__________________________
-
-1 - Say Hello
-2 - Output colors
-3 - Loading in color
-4 - Factorial Calculator
-5 - Degrees to Radians
-0 - Quit
-__________________________
-
-</pre>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
 </div>
 
 
