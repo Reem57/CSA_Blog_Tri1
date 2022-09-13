@@ -248,7 +248,7 @@ layout: notebook
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="De-Morgan's-law">De Morgan's law<a class="anchor-link" href="#De-Morgan's-law"> </a></h1><h2 id="Description:">Description:<a class="anchor-link" href="#Description:"> </a></h2>
+<h1 id="De-Morgan's-law">De Morgan's law<a class="anchor-link" href="#De-Morgan's-law"> </a></h1>
 </div>
 </div>
 </div>
