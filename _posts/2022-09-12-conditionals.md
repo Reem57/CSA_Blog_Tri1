@@ -248,8 +248,9 @@ layout: notebook
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="De-Morgan's-law">De Morgan's law<a class="anchor-link" href="#De-Morgan's-law"> </a></h1><h2 id="Description:">Description:<a class="anchor-link" href="#Description:"> </a></h2><ul>
-<li><img src="images/law.png" alt="image"></li>
+<h1 id="De-Morgan's-law">De Morgan's law<a class="anchor-link" href="#De-Morgan's-law"> </a></h1><h2 id="Description:">Description:<a class="anchor-link" href="#Description:"> </a></h2><p>The complement of the union of the two sets A and B will be equal to the intersection of A' (complement of A) and B' (complement of B).</p>
+<ul>
+<li><img src="vscode-remote://wsl%2Bubuntu/home/reem57/blog_new/images/law.png" alt="image"></li>
 </ul>
 
 </div>
