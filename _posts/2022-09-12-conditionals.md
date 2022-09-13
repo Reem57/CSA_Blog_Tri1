@@ -46,7 +46,7 @@ layout: notebook
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>True code block
+<pre>one is equal to one
 </pre>
 </div>
 </div>
@@ -83,7 +83,7 @@ layout: notebook
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>a is not equal to one
+<pre>num is not equal to one
 </pre>
 </div>
 </div>
@@ -178,7 +178,7 @@ layout: notebook
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The number is: 2
+<pre>The number is: 1
 </pre>
 </div>
 </div>
@@ -235,7 +235,7 @@ layout: notebook
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The number is: 4
+<pre>The number is: 3
 </pre>
 </div>
 </div>
@@ -342,6 +342,20 @@ layout: notebook
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>De Morgan&#39;s law is true
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
