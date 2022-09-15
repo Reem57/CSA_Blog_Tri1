@@ -5,10 +5,10 @@ permalink: /CV/
 title: CV
 ---
 
-## Aspiration
+# Aspiration
 My passion is computer programming and algorithms. I am a hardworking and fast-learning student looking for an internship opportunity in a real-world working environment.  I would love to contribute to the team's success by demonstrating and developing my skills.
 
-## Education
+# Education
 - Junior (11th grade) in Del Norte High School
 - GPA - 4.19
 
@@ -28,7 +28,7 @@ My passion is computer programming and algorithms. I am a hardworking and fast-l
   - English
   - History
 
-## Experience & Skills
+# Experience & Skills
 - Summer Classes/ Internships:
   -  Stanford two week intrologic course
   -  Harvard three week coding summer classes
