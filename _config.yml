@@ -123,3 +123,6 @@ feed:
   
 exclude:
   - settings.ini
+
+date: 
+  "`r format(Sys.time(), '%B %d %Y')`"
