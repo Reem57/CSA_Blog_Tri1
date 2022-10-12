@@ -102,8 +102,6 @@ layout: notebook
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Pick the better one Turquoise or Orange (1-2): 1
 You picked the color: Turquoise
-Pick the better one Turquoise or Yellow (1-2): 11
-Unexpected choice, try again.
 Pick the better one Turquoise or Yellow (1-2): 1
 You picked the color: Turquoise
 Pick the better one Turquoise or Red (1-2): 1
@@ -116,9 +114,9 @@ Pick the better one Turquoise or Pink (1-2): 1
 You picked the color: Turquoise
 Pick the better one Turquoise or Grey (1-2): 1
 You picked the color: Turquoise
-Pick the better one Turquoise or Black (1-2): 2
-You picked the color: Black
-Pick the better one Black or Blue (1-2): 2
+Pick the better one Turquoise or Black (1-2): 1
+You picked the color: Turquoise
+Pick the better one Turquoise or Blue (1-2): 2
 You picked the color: Blue
 Pick the better one Blue or Purple (1-2): 1
 You picked the color: Blue
@@ -134,7 +132,6 @@ Pick the better one Blue or Maroon (1-2): 1
 You picked the color: Blue
 Your favorite color is: Blue
 Thats also my favorite color!
-2073753
 </pre>
 </div>
 </div>
