@@ -78,7 +78,6 @@ layout: notebook
         <span class="k">if</span><span class="p">(</span><span class="n">colors</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;Blue&quot;</span><span class="p">)){</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Thats also my favorite color!&quot;</span><span class="p">);</span>
         <span class="p">}</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">colors</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span>
         <span class="n">colors</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
     
     <span class="p">}</span>
@@ -136,87 +135,6 @@ You picked the color: Blue
 Your favorite color is: Blue
 Thats also my favorite color!
 2073753
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span><span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">Random</span> <span class="n">rand</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span> <span class="c1">//instance of random class</span>
-      <span class="kt">int</span> <span class="n">upperbound</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
-        <span class="c1">//generate random values from 0-11</span>
-      <span class="kt">int</span> <span class="n">int_random</span> <span class="o">=</span> <span class="n">rand</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="n">upperbound</span><span class="p">);</span>
-
-        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">colors</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
-        <span class="n">colors</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">int_random</span><span class="p">);</span>
-
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
-
-            <span class="n">colors</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">int_random</span><span class="p">);</span>
-
-            <span class="kt">int</span> <span class="n">option</span> <span class="o">=</span> <span class="n">favoriteColor</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span> <span class="c1">// storing the option as the variable</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">option</span><span class="p">);</span>
-            <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span> <span class="c1">//Creating a string variable for the name of the image</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">option</span> <span class="o">==</span> <span class="mi">1</span><span class="p">){</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;You picked the color: &quot;</span> <span class="o">+</span> <span class="n">colors</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
-                <span class="n">colors</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-            <span class="p">}</span>
-            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">option</span> <span class="o">==</span> <span class="mi">2</span><span class="p">){</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;You picked the color: &quot;</span> <span class="o">+</span> <span class="n">colors</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
-                <span class="n">colors</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-            <span class="p">}</span>
-            <span class="k">else</span><span class="p">{</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Unexpected choice, try again.&quot;</span><span class="p">);</span>
-            <span class="p">}</span>
-          
-        <span class="p">}</span>
-        <span class="c1">// checking for favorite color</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Your favorite color is: &quot;</span> <span class="o">+</span> <span class="n">colors</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
-        
-        <span class="k">if</span><span class="p">(</span><span class="n">colors</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;Blue&quot;</span><span class="p">)){</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Thats also my favorite color!&quot;</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">colors</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span>
-        <span class="n">colors</span><span class="p">.</span><span class="na">clear</span><span class="p">();</span>
-    
-    <span class="p">}</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">favoriteColor</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
-        
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">Main</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Your favorite color is: 2
-33
 </pre>
 </div>
 </div>
