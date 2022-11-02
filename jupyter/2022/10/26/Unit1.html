@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -181,29 +181,60 @@ You need a 78.0 on the test</li>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>  <span class="c1">// Import the Scanner class</span>
-<span class="kt">double</span> <span class="n">currentGrade</span> <span class="o">=</span> <span class="mf">82.0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">separate</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">g</span> <span class="o">=</span> <span class="mi">96</span><span class="p">;</span> <span class="c1">// Current Class Grade</span>
 <span class="kt">double</span> <span class="n">percentFinal</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
 <span class="kt">double</span> <span class="n">finalScore</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">pointsTest</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">finalPoints</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="kt">double</span> <span class="n">goalGrade</span> <span class="o">=</span> <span class="mi">85</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">80</span><span class="p">;</span> <span class="c1">// test percent of the grade</span>
+<span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span> <span class="c1">// point in the test category</span>
+<span class="kt">int</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="c1">// points that the final is worth</span>
+<span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">92</span><span class="p">;</span> <span class="c1">// percent of points scored within the test category</span>
+<span class="kt">double</span> <span class="n">w</span> <span class="o">=</span> <span class="mi">90</span><span class="p">;</span> <span class="c1">// wanted grade</span>
 
 <span class="n">Scanner</span> <span class="n">finalQ</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>  <span class="c1">// Create a Scanner object</span>
-<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Is the final in the tests category? \n 1 - True \n 2 - False"</span><span class="p">);</span>
-<span class="n">seperate</span> <span class="o">=</span> <span class="n">finalQ</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
-<span class="k">if</span><span class="p">(</span><span class="n">seperate</span> <span class="o">==</span> <span class="mi">1</span><span class="p">){</span>
-            
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Is the final in its own category? \n 1 - True \n 2 - False"</span><span class="p">);</span>
+<span class="n">separate</span> <span class="o">=</span> <span class="n">finalQ</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span><span class="n">separate</span> <span class="o">==</span> <span class="mi">1</span><span class="p">){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"What is your current grade?"</span><span class="p">);</span>
+    <span class="n">currentGrade</span> <span class="o">=</span> <span class="n">finalQ</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"How much percent of your grade is the final?"</span><span class="p">);</span>
+    <span class="n">percentFinal</span> <span class="o">=</span> <span class="n">finalQ</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"What is your desired grade?"</span><span class="p">);</span>
+    <span class="n">goalGrade</span> <span class="o">=</span> <span class="n">finalQ</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+    <span class="n">finalScore</span> <span class="o">=</span> <span class="p">(</span><span class="n">goalGrade</span> <span class="o">-</span><span class="n">currentGrade</span> <span class="o">*</span> <span class="p">(</span><span class="mf">100.0</span><span class="o">-</span> <span class="n">percentFinal</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">percentFinal</span><span class="o">/</span><span class="mi">100</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">finalScore</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">seperate</span> <span class="o">==</span> <span class="mi">2</span><span class="p">){</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">separate</span> <span class="o">==</span> <span class="mi">2</span><span class="p">){</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"What is your current grade? "</span><span class="p">);</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">finalQ</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">g</span><span class="p">);</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"How much is your test category worth? "</span><span class="p">);</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">finalQ</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"How many point are in the test category? "</span><span class="p">);</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">finalQ</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"How many point is the final? "</span><span class="p">);</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">finalQ</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"What is your grade in the test category? "</span><span class="p">);</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">finalQ</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"What is your desired grade? "</span><span class="p">);</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">finalQ</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">w</span><span class="p">);</span>
+
+    <span class="n">finalScore</span> <span class="o">=</span> <span class="p">((</span><span class="mf">0.01</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">f</span><span class="o">*</span><span class="n">g</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">f</span><span class="o">*</span><span class="n">w</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">g</span><span class="o">*</span><span class="n">p</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">p</span><span class="o">*</span><span class="n">w</span><span class="p">))</span><span class="o">/</span><span class="n">t</span><span class="p">;</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"You need to get at least a "</span> <span class="o">+</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">"%.2f"</span><span class="p">,</span> <span class="p">(</span><span class="n">finalScore</span><span class="o">/</span><span class="n">f</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s">"% on you final to get a "</span> <span class="o">+</span> <span class="n">w</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span><span class="p">{</span>
     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Unexpected choice, try again."</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="k">return</span> <span class="n">seperate</span><span class="p">;</span>
-        
-
-<span class="c1">// finalScore = (goalGrade -currentGrade * (100.0- percentFinal)/100) / (percentFinal/100);</span>
-<span class="c1">// System.out.print(finalScore);</span>
 </pre></div>
 
     </div>
@@ -216,20 +247,16 @@ You need a 78.0 on the test</li>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Is the final in the tests category? 
+<pre>Is the final in its own category? 
  1 - True 
  2 - False
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">seperate = </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">finalQ.nextInt()</span><span class="ansi-black-intense-fg ansi-bold">;</span>
-<span class="ansi-red-intense-fg ansi-bold">incompatible types: int cannot be converted to java.lang.String</span>
-</pre>
+What is your current grade? 22.0
+How much is your test category worth? 22
+How many point are in the test category? 22
+How many point is the final? 22
+What is your grade in the test category? 22.0
+What is your desired grade? 22.0
+You need to get at least a 22.00% on you final to get a 22.0</pre>
 </div>
 </div>
 
