@@ -101,10 +101,10 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="p">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SelectionSorting</span> <span class="p">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SelectionSort</span> <span class="p">{</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{</span><span class="mi">32</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">68</span><span class="p">};</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+        
 
         <span class="c1">// Get the length of the array</span>
         <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span>
@@ -112,7 +112,7 @@ window.onload = wrap_img;
         <span class="c1">// Iterate over the array n-1 times</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// Print out the array at the beginning of each iteration</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
+            <span class="c1">//System.out.println(Arrays.toString(arr));</span>
 
             <span class="c1">// Set the minimum index to the current index</span>
             <span class="kt">int</span> <span class="n">minIndex</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
@@ -131,33 +131,16 @@ window.onload = wrap_img;
         <span class="p">}</span>
 
         <span class="c1">// Print out the sorted array</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
+        <span class="c1">//System.out.println(Arrays.toString(arr));</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// Call the SelectionSorting.main() method to run the program</span>
-<span class="n">SelectionSorting</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{</span><span class="mi">32</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">68</span><span class="p">};</span>
+<span class="n">SelectionSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[32, 96, 7, 3, 68]
-[3, 96, 7, 32, 68]
-[3, 7, 96, 32, 68]
-[3, 7, 32, 96, 68]
-[3, 7, 32, 68, 96]
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -187,13 +170,13 @@ window.onload = wrap_img;
 <div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">InsertionSort</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{</span><span class="mi">32</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">68</span><span class="p">};</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+        
 
         <span class="c1">// Iterate over the array starting from the second element</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">// Print out the array at the beginning of each iteration</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
+            <span class="c1">//System.out.println(Arrays.toString(arr));</span>
 
             <span class="c1">// Assign the current element to a temporary variable &#39;key&#39;</span>
             <span class="kt">int</span> <span class="n">key</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
@@ -212,33 +195,16 @@ window.onload = wrap_img;
         <span class="p">}</span>
 
         <span class="c1">// Print out the sorted array</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
+        <span class="c1">//System.out.println(Arrays.toString(arr));</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// Call the InsertionSort.main() method to run the program</span>
-<span class="n">InsertionSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{</span><span class="mi">32</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">68</span><span class="p">};</span>
+<span class="n">InsertionSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[32, 96, 7, 3, 68]
-[32, 96, 7, 3, 68]
-[7, 32, 96, 3, 68]
-[3, 7, 32, 96, 68]
-[3, 7, 32, 68, 96]
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -269,13 +235,13 @@ window.onload = wrap_img;
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MergeSort</span> <span class="p">{</span>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{</span><span class="mi">32</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">68</span><span class="p">};</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+        
+        <span class="c1">//System.out.println(Arrays.toString(arr));</span>
 
         <span class="n">mergeSort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
 
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
+        <span class="c1">//System.out.println(Arrays.toString(arr));</span>
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mergeSort</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="kt">int</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span>
@@ -343,25 +309,11 @@ window.onload = wrap_img;
 <span class="p">}</span>
 
 <span class="c1">// Call the MergeSort.main() method to run the program</span>
-<span class="n">MergeSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{</span><span class="mi">32</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">68</span><span class="p">};</span>
+<span class="n">MergeSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[32, 96, 7, 3, 68]
-[3, 7, 32, 68, 96]
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -391,15 +343,15 @@ window.onload = wrap_img;
 <div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="p">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">BubbleSort</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{</span><span class="mi">32</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">68</span><span class="p">};</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+        
         <span class="kt">boolean</span> <span class="n">swap</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 
         <span class="k">while</span><span class="p">(</span><span class="n">swap</span><span class="p">){</span>
             <span class="n">swap</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> 
             <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
                 <span class="c1">// Print out the array at the beginning of each iteration</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
+                <span class="c1">//System.out.println(Arrays.toString(arr));</span>
                 
                 <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
                 <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span><span class="p">){</span>
@@ -410,12 +362,70 @@ window.onload = wrap_img;
                 <span class="p">}</span>
             <span class="p">}</span>
         <span class="p">}</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
+        <span class="c1">//System.out.println(Arrays.toString(arr));</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="c1">// Call the BubbleSort.main() method to run the program</span>
-<span class="n">BubbleSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{</span><span class="mi">32</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">68</span><span class="p">};</span>
+<span class="n">BubbleSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Time-Analysis">Time Analysis<a class="anchor-link" href="#Time-Analysis"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TimeAnalysis</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// time output selection</span>
+        <span class="kt">long</span> <span class="n">start1</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">SelectionSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+        <span class="kt">long</span> <span class="n">end1</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">end1</span> <span class="o">-</span> <span class="n">start1</span><span class="p">);</span>
+
+        <span class="c1">// time output insertion</span>
+        <span class="kt">long</span> <span class="n">start2</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">InsertionSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+        <span class="kt">long</span> <span class="n">end2</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">end2</span> <span class="o">-</span> <span class="n">start2</span><span class="p">);</span>
+
+        <span class="c1">// time output Merge</span>
+        <span class="kt">long</span> <span class="n">start3</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">MergeSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+        <span class="kt">long</span> <span class="n">end3</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">end3</span> <span class="o">-</span> <span class="n">start3</span><span class="p">);</span>
+
+        <span class="c1">// time output Bubble</span>
+        <span class="kt">long</span> <span class="n">start4</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">BubbleSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+        <span class="kt">long</span> <span class="n">end4</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">end4</span> <span class="o">-</span> <span class="n">start4</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// making a 5000 int array </span>
+<span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5000</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">10000</span><span class="p">);</span>
+        <span class="p">}</span>
+<span class="c1">// Call the TimeAnalysis.main() method to run the program</span>
+<span class="n">TimeAnalysis</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -427,25 +437,40 @@ window.onload = wrap_img;
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[32, 96, 7, 3, 68]
-[32, 96, 7, 3, 68]
-[32, 7, 96, 3, 68]
-[32, 7, 3, 96, 68]
-[32, 7, 3, 68, 96]
-[7, 32, 3, 68, 96]
-[7, 3, 32, 68, 96]
-[7, 3, 32, 68, 96]
-[7, 3, 32, 68, 96]
-[3, 7, 32, 68, 96]
-[3, 7, 32, 68, 96]
-[3, 7, 32, 68, 96]
-[3, 7, 32, 68, 96]
-[3, 7, 32, 68, 96]
-[3, 7, 32, 68, 96]
-[3, 7, 32, 68, 96]
-[3, 7, 32, 68, 96]
-</pre>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">public class TimeAnalysis {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public static void main(int[] arr) {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        // time output selection</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long start1 = System.nanoTime();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        SelectionSorting.main(arr);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long end1 = System.nanoTime();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.print(end1 - start1);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        // time output insertion</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long start2 = System.nanoTime();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        InsertionSort.main(arr);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long end2 = System.nanoTime();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.print(end2 - start2);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        // time output Merge</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long start3 = System.nanoTime();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        MergeSort.main(arr);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long end3 = System.nanoTime();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.print(end3 - start3);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        // time output Bubble</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long start4 = System.nanoTime();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        BubbleSort.main(arr);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long end4 = System.nanoTime();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.print(end4 - start4);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">}</span>
+<span class="ansi-red-intense-fg ansi-bold">Unresolved dependencies:</span>
+<span class="ansi-red-intense-fg ansi-bold">   - variable SelectionSorting</span>
+<span class="ansi-red-intense-fg ansi-bold">   - variable InsertionSort</span>
+<span class="ansi-red-intense-fg ansi-bold">   - variable MergeSort</span>
+<span class="ansi-red-intense-fg ansi-bold">   - variable BubbleSort</span></pre>
 </div>
 </div>
 
