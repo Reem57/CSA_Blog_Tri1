@@ -144,6 +144,24 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[32, 96, 7, 3, 68]
+[3, 96, 7, 32, 68]
+[3, 7, 96, 32, 68]
+[3, 7, 32, 96, 68]
+[3, 7, 32, 68, 96]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -155,7 +173,7 @@ window.onload = wrap_img;
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This code implements the Insertion Sort algorithm to sort an array in ascending order. It does so by iterating over the array and inserting each element into its correct position in the sorted portion of the array. The algorithm has a time complexity of O(n^2) but can be more efficient than other O(n^2) algorithms, such as the Selection Sort and Bubble Sort, for small arrays or partially sorted arrays.</p>
+<p>This code implements the Insertion Sort algorithm to sort an array in ascending order. It does so by iterating over the array and inserting each element into its correct position in the sorted portion of the array. The algorithm has a time complexity of O(n^2) but can be more efficient than other O(n^2) algorithms, such as the Selection Sort and Bubble Sort, for small arrays or partially sorted arrays. Since each swap takes constant time, the total time complexity of the algorithm becomes O(n^2).</p>
 
 </div>
 </div>
@@ -205,6 +223,24 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[32, 96, 7, 3, 68]
+[32, 96, 7, 3, 68]
+[7, 32, 96, 3, 68]
+[3, 7, 32, 96, 68]
+[3, 7, 32, 68, 96]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -317,6 +353,21 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[32, 96, 7, 3, 68]
+[3, 7, 32, 68, 96]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -375,6 +426,36 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[32, 96, 7, 3, 68]
+[32, 96, 7, 3, 68]
+[32, 7, 96, 3, 68]
+[32, 7, 3, 96, 68]
+[32, 7, 3, 68, 96]
+[7, 32, 3, 68, 96]
+[7, 3, 32, 68, 96]
+[7, 3, 32, 68, 96]
+[7, 3, 32, 68, 96]
+[3, 7, 32, 68, 96]
+[3, 7, 32, 68, 96]
+[3, 7, 32, 68, 96]
+[3, 7, 32, 68, 96]
+[3, 7, 32, 68, 96]
+[3, 7, 32, 68, 96]
+[3, 7, 32, 68, 96]
+[3, 7, 32, 68, 96]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -392,40 +473,58 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TimeAnalysis</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// time output selection</span>
-        <span class="kt">long</span> <span class="n">start1</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
-        <span class="n">SelectionSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
-        <span class="kt">long</span> <span class="n">end1</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">end1</span> <span class="o">-</span> <span class="n">start1</span><span class="p">);</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">long</span> <span class="n">totaltime1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">long</span> <span class="n">totaltime2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">long</span> <span class="n">totaltime3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">long</span> <span class="n">totaltime4</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">repeat</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">repeat</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
 
-        <span class="c1">// time output insertion</span>
-        <span class="kt">long</span> <span class="n">start2</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
-        <span class="n">InsertionSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
-        <span class="kt">long</span> <span class="n">end2</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">end2</span> <span class="o">-</span> <span class="n">start2</span><span class="p">);</span>
+            <span class="c1">// making a 5000 int array </span>
+            <span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5000</span><span class="o">]</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">10000</span><span class="p">);</span>
+        <span class="p">}</span>
+            <span class="c1">// time output selection</span>
+            
+            <span class="kt">long</span> <span class="n">start1</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+            <span class="n">SelectionSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+            <span class="kt">long</span> <span class="n">end1</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+            <span class="kt">long</span> <span class="n">time1</span> <span class="o">=</span> <span class="n">end1</span> <span class="o">-</span> <span class="n">start1</span><span class="p">;</span>
+            <span class="n">totaltime1</span> <span class="o">+=</span> <span class="p">(</span><span class="n">time1</span><span class="p">);</span>
+           
+            <span class="c1">// time output insertion</span>
+            <span class="kt">long</span> <span class="n">start2</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+            <span class="n">InsertionSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+            <span class="kt">long</span> <span class="n">end2</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+            <span class="kt">long</span> <span class="n">time2</span> <span class="o">=</span> <span class="n">end2</span> <span class="o">-</span> <span class="n">start2</span><span class="p">;</span>
+            <span class="n">totaltime2</span> <span class="o">+=</span> <span class="p">(</span><span class="n">time2</span><span class="p">);</span>
 
-        <span class="c1">// time output Merge</span>
-        <span class="kt">long</span> <span class="n">start3</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
-        <span class="n">MergeSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
-        <span class="kt">long</span> <span class="n">end3</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">end3</span> <span class="o">-</span> <span class="n">start3</span><span class="p">);</span>
+            <span class="c1">// time output Merge</span>
+            <span class="kt">long</span> <span class="n">start3</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+            <span class="n">MergeSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+            <span class="kt">long</span> <span class="n">end3</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+            <span class="kt">long</span> <span class="n">time3</span> <span class="o">=</span> <span class="n">end3</span> <span class="o">-</span> <span class="n">start3</span><span class="p">;</span>
+            <span class="n">totaltime3</span> <span class="o">+=</span> <span class="p">(</span><span class="n">time3</span><span class="p">);</span>
 
-        <span class="c1">// time output Bubble</span>
-        <span class="kt">long</span> <span class="n">start4</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
-        <span class="n">BubbleSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
-        <span class="kt">long</span> <span class="n">end4</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">end4</span> <span class="o">-</span> <span class="n">start4</span><span class="p">);</span>
+            <span class="c1">// time output Bubble</span>
+            <span class="kt">long</span> <span class="n">start4</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+            <span class="n">BubbleSort</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+            <span class="kt">long</span> <span class="n">end4</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+            <span class="kt">long</span> <span class="n">time4</span> <span class="o">=</span> <span class="n">end4</span> <span class="o">-</span> <span class="n">start4</span><span class="p">;</span>
+            <span class="n">totaltime4</span> <span class="o">+=</span> <span class="p">(</span><span class="n">time4</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Selection Sort Average: &quot;</span> <span class="o">+</span> <span class="n">totaltime1</span><span class="o">/</span><span class="n">repeat</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Insertion Sort Average: &quot;</span> <span class="o">+</span> <span class="n">totaltime2</span><span class="o">/</span><span class="n">repeat</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Merge Sort Average: &quot;</span> <span class="o">+</span> <span class="n">totaltime3</span><span class="o">/</span><span class="n">repeat</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Bubble Sort Average: &quot;</span> <span class="o">+</span> <span class="n">totaltime4</span><span class="o">/</span><span class="n">repeat</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="c1">// making a 5000 int array </span>
-<span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5000</span><span class="o">]</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">10000</span><span class="p">);</span>
-        <span class="p">}</span>
+
 <span class="c1">// Call the TimeAnalysis.main() method to run the program</span>
-<span class="n">TimeAnalysis</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+<span class="n">TimeAnalysis</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -437,40 +536,12 @@ window.onload = wrap_img;
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">public class TimeAnalysis {</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public static void main(int[] arr) {</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        // time output selection</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long start1 = System.nanoTime();</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        SelectionSorting.main(arr);</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long end1 = System.nanoTime();</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.print(end1 - start1);</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        // time output insertion</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long start2 = System.nanoTime();</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        InsertionSort.main(arr);</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long end2 = System.nanoTime();</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.print(end2 - start2);</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        // time output Merge</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long start3 = System.nanoTime();</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        MergeSort.main(arr);</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long end3 = System.nanoTime();</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.print(end3 - start3);</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        // time output Bubble</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long start4 = System.nanoTime();</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        BubbleSort.main(arr);</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        long end4 = System.nanoTime();</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.print(end4 - start4);</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">}</span>
-<span class="ansi-red-intense-fg ansi-bold">Unresolved dependencies:</span>
-<span class="ansi-red-intense-fg ansi-bold">   - variable SelectionSorting</span>
-<span class="ansi-red-intense-fg ansi-bold">   - variable InsertionSort</span>
-<span class="ansi-red-intense-fg ansi-bold">   - variable MergeSort</span>
-<span class="ansi-red-intense-fg ansi-bold">   - variable BubbleSort</span></pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Selection Sort Average: 7445296
+Insertion Sort Average: 3975
+Merge Sort Average: 349975
+Bubble Sort Average: 1730
+</pre>
 </div>
 </div>
 
