@@ -611,7 +611,7 @@ Bubble Sort Average: 5851080
         <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span> <span class="n">binarySearchTimes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
         <span class="c1">// Looping 100 times</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 
             <span class="c1">// Looping through the list and adding random integer values to the HashMap</span>
             <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -709,20 +709,20 @@ Bubble Sort Average: 5851080
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Lookup Times:
-Average: 1215.53 nanoseconds
-Standard Deviation: 2036.61 nanoseconds
-Median: 484 nanoseconds
-Mode: 160 nanoseconds
-Max: 13090 nanoseconds
-Min: 73 nanoseconds
+Average: 70.726 nanoseconds
+Standard Deviation: 95.03 nanoseconds
+Median: 50 nanoseconds
+Mode: 36 nanoseconds
+Max: 2126 nanoseconds
+Min: 30 nanoseconds
 
 Binary Search Times:
-Average: 8812.9 nanoseconds
-Standard Deviation: 15138.23 nanoseconds
-Median: 4181 nanoseconds
-Mode: 258 nanoseconds
-Max: 88527 nanoseconds
-Min: 205 nanoseconds
+Average: 175.89 nanoseconds
+Standard Deviation: 104.42 nanoseconds
+Median: 159 nanoseconds
+Mode: 167 nanoseconds
+Max: 1681 nanoseconds
+Min: 46 nanoseconds
 </pre>
 </div>
 </div>
@@ -733,6 +733,13 @@ Min: 205 nanoseconds
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Considering the search time of 70.726 nanoseconds and the binary search time of 175.89 nanoseconds, we can see that the binary search algorithm is slower than the linear search algorithm for this particular use case. However, it is worth noting that the standard deviation of the binary search times is smaller than the standard deviation for the lookup times, indicating that the binary search algorithm can be more accurate in its implementation. The median and mode values ​​of both algorithms are very close to their averages, indicating that the data are fairly evenly distributed. However, the maximum search time of 2126 nanoseconds and the maximum dual search time of 1681 nanoseconds suggest that there may be some anomalies in the data that result in long search times things are coming. It’s worth examining these outliers to see if there are any patterns or factors that are contributing to their long-term search.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
